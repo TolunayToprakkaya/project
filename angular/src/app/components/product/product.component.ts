@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import {Http} from "@angular/http";
+import {Headers,Http} from "@angular/http";
+import {Product} from "../../models/product";
 
 var now = new Date();
 var returnDate = new Date();
@@ -23,21 +24,20 @@ export class ProductComponent implements OnInit {
         this.products = res.json();
       })
   };
-
+  private headers = new Headers({'Content-Type': 'application/json'});
   productDetailObj: object ={};
 
-  save = function (product) {
-    console.log(product.id);
+  save(product: Product): Promise<Product>{
     if(confirm( product.name + " Ürünü Bakıma Alıcaksınız Emin Misin?")) {
       this.productDetailObj = {
         "createDate": now,
         "returnDate": returnDate,
         "detailPart": "Hasarli",
-        "product_id": product.id
+        "product": product
       };
-      this.http.post("http://localhost:8080/api/v1/productDetails" , this.productDetailObj).subscribe((res: Response) => {
-        console.log(res);
-      })
+      return this.http.post("http://localhost:8080/api/v1/productDetails", this.productDetailObj, {headers: this.headers})
+        .toPromise()
+        .then(res => res.json() as Product);
     }
   };
 
