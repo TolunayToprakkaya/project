@@ -1,5 +1,6 @@
+/*
 import { Injectable } from '@angular/core';
-import {Process} from "../models/process";
+import {ProductDetail} from "../models/productDetail";
 
 var now = new Date();
 var overhaulDate = new Date();
@@ -8,9 +9,9 @@ overhaulDate.setDate(now.getDate() + 10);
 @Injectable({
   providedIn: 'root'
 })
-export class ProcessService {
+export class ProductDetailService {
 
-  processes: Process[]=[
+  productDetails: ProductDetail[]=[
     {
       name: 'Cep Telefonu',
       part: 'Hasarlı',
@@ -27,13 +28,14 @@ export class ProcessService {
 
   constructor() { }
 
-  GetProcesses(){
-    return this.processes;
+  GetProductDetails(){
+    return this.productDetails;
   }
 
-  RemoveProcess(process: Process){
-    const index = this.processes.indexOf(process);
-    this.processes.splice(index, 1);
+  RemoveProductDetail(productDetail: ProductDetail){
+    const index = this.productDetails.indexOf(productDetail);
+    this.productDetails.splice(index, 1);
   }
 
 }
+*/

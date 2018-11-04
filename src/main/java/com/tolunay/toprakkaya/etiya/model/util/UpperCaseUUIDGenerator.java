@@ -8,6 +8,12 @@ import org.hibernate.id.UUIDGenerator;
 
 import java.io.Serializable;
 
+/*
+ * ID'leri Büyük Harfle Otomatik Atandı.
+ *
+ * @author Tolunay Toprakkaya
+ * @since 31.10.2018
+ */
 public class UpperCaseUUIDGenerator extends UUIDGenerator {
 
     @Override

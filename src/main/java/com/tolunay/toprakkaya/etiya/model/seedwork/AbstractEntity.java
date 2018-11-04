@@ -10,6 +10,12 @@ import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.*;
 import java.io.Serializable;
 
+/*
+ * Entitydeki ID'leri Online GUID Generator formatında yazıldı.
+ *
+ * @author Tolunay Toprakkaya
+ * @since 31.10.2018
+ */
 @Data
 @MappedSuperclass
 @JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.ANY)

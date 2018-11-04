@@ -1,3 +1,4 @@
+<!--
 <form>
   <div class="form-row mt-4">
     <div class="form-group col-md-6">
@@ -11,8 +12,15 @@
   </div>
   <button type="button" class="btn btn-primary mb-4" style="float:right" (click)="AddProduct(productText, productPart)">Ekle</button>
 </form>
-
-
+-->
+<!--
+<ul>
+  <li *ngFor="let product of products" [class.seleted]="product === selectedProduct" (click)="onSelect(product)" ]>
+    <h4>{{product.id}} - {{product.name}} {{product.part}}</h4>
+  </li>
+</ul>
+-->
+<!--
 <table class="table table-striped" *ngIf="products.length; else empty">
   <thead>
   <tr>
@@ -30,6 +38,26 @@
     <td>{{ product.part }}</td>
     <td>{{ product.createdAt | date: 'dd.MM.yyyy / hh:mm:ss' }}</td>
     <td><button type="button" class="btn btn-danger" (click)="RemoveProduct(product)">Sil</button></td>
+  </tr>
+  </tbody>
+</table>
+-->
+
+<table class="table table-striped" *ngIf="products.length; else empty">
+  <thead>
+  <tr>
+    <th scope="col">ID</th>
+    <th scope="col">Ürün</th>
+    <th scope="col">Güncel Durum</th>
+    <th scope="col">Seçenekler</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let product of products">
+    <th scope="row">{{ product.id }}</th>
+    <td>{{ product.name }}</td>
+    <td>{{ product.part }}</td>
+    <td><button type="button" class="btn btn-danger" (click)="save(product)">Sorun Bildir</button></td>
   </tr>
   </tbody>
 </table>

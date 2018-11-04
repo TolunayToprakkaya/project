@@ -7,6 +7,12 @@ import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
+/*
+ * Etiya DB'deki T_CUSTOMER tablosunu elemanları oluşturuldu.
+ *
+ * @author Tolunay Toprakkaya
+ * @since 31.10.2018
+ */
 @Entity
 @Table(name = "T_CUSTOMER")
 public class Customer extends AbstractEntity{
@@ -27,7 +33,7 @@ public class Customer extends AbstractEntity{
     private Set<Product> products = new HashSet<>();
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "customer")
-    private Set<Process> processes = new HashSet<>();
+    private Set<ProductDetail> productDetails = new HashSet<>();
 
     public String getUsername() {
         return username;
@@ -66,11 +72,11 @@ public class Customer extends AbstractEntity{
     }
 
     @JsonIgnore
-    public Set<Process> getProcesses() {
-        return processes;
+    public Set<ProductDetail> getProductDetails() {
+        return productDetails;
     }
-    public void setProcesses(Set<Process> processes) {
-        this.processes = processes;
+    public void setProductDetails(Set<ProductDetail> productDetails) {
+        this.productDetails = productDetails;
     }
 
 }

@@ -10,6 +10,12 @@ import java.sql.Timestamp;
 import java.util.HashSet;
 import java.util.Set;
 
+/*
+* Etiya DB'deki T_PRODUCT tablosunu elemanları oluşturuldu.
+*
+* @author Tolunay Toprakkaya
+* @since 31.10.2018
+*/
 @Entity
 @Table(name = "T_PRODUCT")
 public class Product extends AbstractEntity {
@@ -21,16 +27,14 @@ public class Product extends AbstractEntity {
     @Enumerated(EnumType.ORDINAL)
     private ProductPart part;
 
-    @Column(name = "overhaul_date")
-    private Timestamp overhaulDate;
-
     @RestResource(exported = false)
     @ManyToOne
     @JoinColumn(name = "customer_id")
     private Customer customer;
 
+    @RestResource(exported = false)
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "product")
-    private Set<Process> processes = new HashSet<>();
+    private Set<ProductDetail> productDetails = new HashSet<>();
 
     public String getName() {
         return name;
@@ -46,14 +50,7 @@ public class Product extends AbstractEntity {
         this.part = part;
     }
 
-    public Timestamp getOverhaulDate() {
-        return overhaulDate;
-    }
-    public void setOverhaulDate(Timestamp overhaulDate) {
-        this.overhaulDate = overhaulDate;
-    }
-
-    @JsonIgnore
+    @Transient
     public Customer getCustomer() {
         return customer;
     }
@@ -62,11 +59,11 @@ public class Product extends AbstractEntity {
     }
 
     @JsonIgnore
-    public Set<Process> getProcesses() {
-        return processes;
+    public Set<ProductDetail> getProductDetails() {
+        return productDetails;
     }
-    public void setProcesses(Set<Process> processes) {
-        this.processes = processes;
+    public void setProductDetails(Set<ProductDetail> productDetails) {
+        this.productDetails = productDetails;
     }
 
 }

@@ -10,6 +10,12 @@ import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 
+/*
+ * Product Service Implementinden Gelenler Eklendi
+ *
+ * @author Tolunay Toprakkaya
+ * @since 31.10.2018
+ */
 @Service("productService")
 public class ProductServiceImpl  implements ProductService{
 

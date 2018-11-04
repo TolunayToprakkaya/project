@@ -1,0 +1,28 @@
+<table class="table table-striped" *ngIf="productDetails.length; else empty">
+  <thead>
+  <tr>
+    <th scope="col">ID</th>
+    <th scope="col">Ürün</th>
+    <th scope="col">Güncel Durum</th>
+    <th scope="col">Ekleme Tarihi</th>
+    <th scope="col">Teslim Tarihi</th>
+    <th scope="col">Seçenekler</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let productDetail of productDetails">
+    <th scope="row">{{ productDetail.id }}</th>
+    <td>{{ productDetail.product.name }}</td>
+    <td>{{ productDetail.detailPart }}</td>
+    <td>{{ productDetail.createDate | date: 'dd.MM.yyyy / hh:mm:ss' }}</td>
+    <td>{{ productDetail.returnDate | date: 'dd.MM.yyyy / hh:mm:ss' }}</td>
+    <td><button type="button" class="btn btn-danger" (click)="delete(productDetail.id)"><a>İptal</a></button></td>
+  </tr>
+  </tbody>
+</table>
+
+<ng-template #empty>
+  <div class="alert alert-danger mt-5" role="alert">
+    Ürün Yok!
+  </div>
+</ng-template>

@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import {Product} from "../../models/product";
-import {ProductService} from "../../services/product.service";
+
+import {Http} from "@angular/http";
+
+var now = new Date();
+var returnDate = new Date();
+returnDate.setDate(now.getDate() + 10);
 
 @Component({
   selector: 'app-product',
@@ -9,27 +13,36 @@ import {ProductService} from "../../services/product.service";
 })
 export class ProductComponent implements OnInit {
 
-  products: Product[];
+  constructor(private http: Http){}
 
-  constructor(private productService: ProductService) { }
+  products = [];
 
-  ngOnInit() {
-    this.products = this.productService.GetProducts();
-  }
+  findAll = function() {
+    this.http.get("http://localhost:8080/api/v1/products").subscribe(
+      (res: Response) => {
+        this.products = res.json();
+      })
+  };
 
-  AddProduct(productText: HTMLInputElement, productPart: HTMLInputElement){
-    const obj = {
-      name: productText.value,
-      part: productPart.value,
-      createdAt: new Date()
-    };
-    this.productService.AddProduct(obj);
-    productText.value = "";
-    productPart.value = "";
-  }
+  productDetailObj: object ={};
 
-  RemoveProduct(product: Product){
-    this.productService.RemoveProduct(product);
+  save = function (product) {
+    console.log(product.id);
+    if(confirm( product.name + " Ürünü Bakıma Alıcaksınız Emin Misin?")) {
+      this.productDetailObj = {
+        "createDate": now,
+        "returnDate": returnDate,
+        "detailPart": "Hasarli",
+        "product_id": product.id
+      };
+      this.http.post("http://localhost:8080/api/v1/productDetails" , this.productDetailObj).subscribe((res: Response) => {
+        console.log(res);
+      })
+    }
+  };
+
+  ngOnInit(): void {
+    this.findAll();
   }
 
 }

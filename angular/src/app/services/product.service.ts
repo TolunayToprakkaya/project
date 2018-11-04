@@ -1,41 +1,43 @@
+/*
 import { Injectable } from '@angular/core';
+import {Http, Response, Headers, RequestOptions} from "@angular/http";
+import { throwError } from 'rxjs';
+
+
+import {map, catchError} from "rxjs/operators";
+import { Observable} from "rxjs/index";
 import {Product} from "../models/product";
 
-var now = new Date();
-var overhaulDate = new Date();
-overhaulDate.setDate(now.getDate() + 10);
-
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class ProductService {
 
-  products: Product[] = [
-    {
-      name: 'Televizyon',
-      part: 'Working',
-      createdAt: now
-    },
-    {
-      name: 'Bilgisayar',
-      part: 'Working',
-      createdAt: now
-    }
-  ];
+  private baseUrl: string = 'http://localhost:8080/api/v1';
+  private headers = new Headers({'Content-Type': 'application/json'});
+  private options = new RequestOptions({headers:this.headers});
 
-  constructor() { }
+  constructor(private _http: Http) { }
 
-  GetProducts(){
-    return this.products;
+  findAll(){
+    return this._http.get(this.baseUrl+'/products', this.options).pipe(map((response: Response)=> response.json())).pipe(
+      catchError(this.errorHandler)
+    )
   }
 
-  AddProduct(obj){
-    this.products.push(obj);
+  save(product:Product){
+    return this._http.post(this.baseUrl+'/productDetails',JSON.stringify(product), this.options).pipe(map((response: Response)=> response.json())).pipe(
+      catchError(this.errorHandler)
+    )
   }
 
-  RemoveProduct(product: Product){
-    const index = this.products.indexOf(product);
-    this.products.splice(index, 1);
+  delete(id:String){
+    return this._http.get(this.baseUrl+'/products/'+id, this.options).pipe(map((response: Response)=> response.json())).pipe(
+      catchError(this.errorHandler)
+    )
+  }
+
+  errorHandler(error: Response){
+    return Observable.throw(error || "Server Error");
   }
 
 }
+*/

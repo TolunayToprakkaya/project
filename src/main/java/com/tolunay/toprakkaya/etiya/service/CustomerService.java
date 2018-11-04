@@ -5,6 +5,12 @@ import com.tolunay.toprakkaya.etiya.model.Customer;
 import java.util.List;
 import java.util.Optional;
 
+/*
+ * Customer Service Eklendi
+ *
+ * @author Tolunay Toprakkaya
+ * @since 31.10.2018
+ */
 public interface CustomerService {
 
     List<Customer> findAll();
