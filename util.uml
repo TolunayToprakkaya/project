@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>com.tolunay.toprakkaya.etiya.model.util</OriginalElement>
+  <nodes>
+    <node x="763.7166666666669" y="82.0">com.tolunay.toprakkaya.etiya.model.enums.ProductPart</node>
+    <node x="40.05000000000018" y="508.0">com.tolunay.toprakkaya.etiya.model.util.UpperCaseUUIDGenerator</node>
+    <node x="613.8833333333336" y="1395.0">com.tolunay.toprakkaya.etiya.model.ProductDetail</node>
+    <node x="28.752564102564293" y="0.0">com.tolunay.toprakkaya.etiya.model.seedwork.AbstractEntity</node>
+    <node x="583.0500000000002" y="359.0">com.tolunay.toprakkaya.etiya.model.Product</node>
+    <node x="261.60641025641036" y="791.0">com.tolunay.toprakkaya.etiya.model.Customer</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="com.tolunay.toprakkaya.etiya.model.ProductDetail" target="com.tolunay.toprakkaya.etiya.model.seedwork.AbstractEntity">
+      <point x="-121.33333333333331" y="-221.5" />
+      <point x="629.0500000000002" y="1375.0" />
+      <point x="0.0" y="1375.0" />
+      <point x="0.0" y="329.0" />
+      <point x="67.00256410256429" y="329.0" />
+      <point x="-114.75" y="154.5" />
+    </edge>
+    <edge source="com.tolunay.toprakkaya.etiya.model.Product" target="com.tolunay.toprakkaya.etiya.model.enums.ProductPart">
+      <point x="125.33333333333337" y="-181.0" />
+      <point x="896.3833333333336" y="339.0" />
+      <point x="868.7166666666669" y="339.0" />
+      <point x="35.0" y="72.5" />
+    </edge>
+    <edge source="com.tolunay.toprakkaya.etiya.model.ProductDetail" target="com.tolunay.toprakkaya.etiya.model.Customer">
+      <point x="-91.0" y="-221.5" />
+      <point x="659.3833333333336" y="1365.0" />
+      <point x="308.60641025641036" y="1365.0" />
+      <point x="-141.0" y="262.0" />
+    </edge>
+    <edge source="com.tolunay.toprakkaya.etiya.model.Customer" target="com.tolunay.toprakkaya.etiya.model.seedwork.AbstractEntity">
+      <point x="-150.39999999999986" y="-262.0" />
+      <point x="299.2064102564105" y="771.0" />
+      <point x="29.550000000000182" y="771.0" />
+      <point x="29.550000000000182" y="339.0" />
+      <point x="143.5025641025643" y="339.0" />
+      <point x="-38.25" y="154.5" />
+    </edge>
+    <edge source="com.tolunay.toprakkaya.etiya.model.util.UpperCaseUUIDGenerator" target="com.tolunay.toprakkaya.etiya.model.seedwork.AbstractEntity">
+      <point x="0.0" y="-32.0" />
+      <point x="301.5500000000002" y="339.0" />
+      <point x="220.0025641025643" y="339.0" />
+      <point x="38.25" y="154.5" />
+    </edge>
+    <edge source="com.tolunay.toprakkaya.etiya.model.Customer" target="com.tolunay.toprakkaya.etiya.model.ProductDetail">
+      <point x="141.0" y="262.0" />
+      <point x="590.6064102564103" y="1335.0" />
+      <point x="750.3833333333334" y="1335.0" />
+      <point x="-5.6843418860808015E-14" y="-221.5" />
+    </edge>
+    <edge source="com.tolunay.toprakkaya.etiya.model.Product" target="com.tolunay.toprakkaya.etiya.model.Customer">
+      <point x="-70.5" y="181.0" />
+      <point x="700.5500000000002" y="761.0" />
+      <point x="524.8064102564103" y="761.0" />
+      <point x="75.20000000000005" y="-262.0" />
+    </edge>
+    <edge source="com.tolunay.toprakkaya.etiya.model.Customer" target="com.tolunay.toprakkaya.etiya.model.Product">
+      <point x="0.0" y="-262.0" />
+      <point x="449.60641025641036" y="751.0" />
+      <point x="653.5500000000002" y="751.0" />
+      <point x="-117.5" y="181.0" />
+    </edge>
+    <edge source="com.tolunay.toprakkaya.etiya.model.Product" target="com.tolunay.toprakkaya.etiya.model.seedwork.AbstractEntity">
+      <point x="-125.33333333333337" y="-181.0" />
+      <point x="645.7166666666668" y="329.0" />
+      <point x="296.5025641025643" y="329.0" />
+      <point x="114.75" y="154.5" />
+    </edge>
+    <edge source="com.tolunay.toprakkaya.etiya.model.ProductDetail" target="com.tolunay.toprakkaya.etiya.model.Product">
+      <point x="60.66666666666666" y="-221.5" />
+      <point x="811.0500000000002" y="1365.0" />
+      <point x="845.4615384615387" y="1365.0" />
+      <point x="845.4615384615387" y="771.0" />
+      <point x="841.5500000000002" y="771.0" />
+      <point x="70.5" y="181.0" />
+    </edge>
+    <edge source="com.tolunay.toprakkaya.etiya.model.Product" target="com.tolunay.toprakkaya.etiya.model.ProductDetail">
+      <point x="117.5" y="181.0" />
+      <point x="888.5500000000002" y="761.0" />
+      <point x="856.4615384615387" y="761.0" />
+      <point x="856.4615384615387" y="1375.0" />
+      <point x="841.3833333333334" y="1375.0" />
+      <point x="90.99999999999991" y="-221.5" />
+    </edge>
+  </edges>
+  <settings layout="Hıerarchıc Group" zoom="1.0" x="118.0" y="522.0" />
+  <SelectedNodes>
+    <node>com.tolunay.toprakkaya.etiya.model.enums.ProductPart</node>
+    <node>com.tolunay.toprakkaya.etiya.model.util.UpperCaseUUIDGenerator</node>
+    <node>com.tolunay.toprakkaya.etiya.model.ProductDetail</node>
+    <node>com.tolunay.toprakkaya.etiya.model.seedwork.AbstractEntity</node>
+    <node>com.tolunay.toprakkaya.etiya.model.Product</node>
+    <node>com.tolunay.toprakkaya.etiya.model.Customer</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Methods</Category>
+    <Category>Inner Classes</Category>
+    <Category>Constructors</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
